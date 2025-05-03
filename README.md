@@ -46,9 +46,11 @@ erpnext-renamer/
 └── README.md
 ```
 
- ✅ Status: In progress...
+ ## ✅ Status: 
+ In progress...
 
- 🧑‍💻 Developed by Ixgramdev
+ ## 🧑‍💻 Developed by:
+ Ixgramdev
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -105,6 +107,8 @@ erpnext-renamer/
 └── README.md
 ```
 
-✅ Estado: In progress...
+## ✅ Estado: 
+In progress...
 
-🧑‍💻 Desarrollado por Ixgramdev
+## 🧑‍💻 Desarrollado por:
+Ixgramdev
