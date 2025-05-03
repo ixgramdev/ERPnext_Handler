@@ -84,14 +84,14 @@ La interfaz está diseñada con `customtkinter`, moderna y simple:
 - Dependencias Python:
   - `customtkinter`
 
-🛠️ Tecnología usada
+## 🛠️ Tecnología usada
 
 - Python  
 - customtkinter  
 - Docker  
 - Frappe Framework
 
-📂 Estructura del proyecto
+## 📂 Estructura del proyecto
 
 ```
 erpnext-renamer/
