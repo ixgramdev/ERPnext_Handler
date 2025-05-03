@@ -86,13 +86,10 @@ La interfaz está diseñada con `customtkinter`, moderna y simple:
 
 🛠️ Tecnología usada
 
-    Python
-
-    customtkinter
-
-    Docker
-
-    Frappe Framework
+- Python  
+- customtkinter  
+- Docker  
+- Frappe Framework
 
 📂 Estructura del proyecto
 
