@@ -1,4 +1,4 @@
-# ERPNext Renamer
+# ERPNext Renamer (English)
 
 **ERPNext Renamer** is a graphical tool built with Python and `customtkinter`, designed to simplify the process of renaming custom fields (`Custom Field`) in a local ERPNext instance running inside Docker.
 
@@ -55,7 +55,7 @@ erpnext-renamer/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ERPNext Renamer
+# ERPNext Renamer (Español)
 
 **ERPNext Renamer** es una herramienta con interfaz gráfica construida en Python y `customtkinter`. 
 Diseñada para simplificar el proceso de renombrar campos personalizados (`Custom Field`) en una instancia local de ERPNext ejecutada dentro de Docker.
