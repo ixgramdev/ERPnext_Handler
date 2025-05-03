@@ -35,6 +35,7 @@ The interface is built with `customtkinter`, modern and simple:
 
 ## 📂 Project Structure
 
+```
 erpnext-renamer/
 ├── app.py # Main UI
 ├── renamer.py # Logic for renaming fields using Docker
@@ -43,6 +44,7 @@ erpnext-renamer/
 ├── requirements.txt # Python dependencies
 ├── .gitignore
 └── README.md
+```
 
 ## ✅ Status: In progress...
 
@@ -92,6 +94,7 @@ La interfaz está diseñada con `customtkinter`, moderna y simple:
 
 📂 Estructura del proyecto
 
+```
 erpnext-renamer/
 ├── app.py             # Interfaz principal
 ├── renamer.py         # Lógica para renombrar campos usando Docker
@@ -100,6 +103,7 @@ erpnext-renamer/
 ├── requirements.txt   # Dependencias
 ├── .gitignore
 └── README.md
+```
 
 ✅ Estado: In progress...
 
