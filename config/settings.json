@@ -1,0 +1,5 @@
+{
+    "container_name": "frappe_app",
+    "site_name": "your-site-name.local"
+}
+  
