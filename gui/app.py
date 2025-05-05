@@ -1,59 +1,49 @@
-
 import customtkinter as ctk
-from modules.renamer import rename_fields
+from gui.gui_renamer import RenamerFrame
+from PIL import Image
 
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
 
-class RenameApp(ctk.CTk):
+class ERPNextHandler(ctk.CTk):
     def __init__(self):
         super().__init__()
-        self.title("Renombrador de Campos - ERPNext")
-        self.geometry("700x500")
+        self.title("ERPnext Handler")
+        self.geometry("900x600")
 
-        self.entries = []
+        # Top Bar (con ícono y título)
+        top_frame = ctk.CTkFrame(self, height=60)
+        top_frame.pack(fill="x")
 
-        self.frame = ctk.CTkScrollableFrame(self, width=680, height=400)
-        self.frame.pack(padx=10, pady=10)
+        icon = ctk.CTkLabel(top_frame, text="", image=ctk.CTkImage(light_image=Image.open("assets/icon.png"), size=(40, 40)))
+        icon.pack(side="left", padx=10, pady=10)
 
-        header = ctk.CTkLabel(self.frame, text="Fieldname actual → Nuevo nombre", font=ctk.CTkFont(size=16))
-        header.grid(row=0, column=0, columnspan=2, pady=5)
+        title = ctk.CTkLabel(top_frame, text="ERPnext Handler", font=ctk.CTkFont(size=20, weight="bold"))
+        title.pack(side="left", padx=5)
 
-        self.add_row()
+        # Divider
+        divider = ctk.CTkFrame(self, height=2)
+        divider.pack(fill="x")
 
-        self.add_button = ctk.CTkButton(self, text="+ Añadir campo", command=self.add_row)
-        self.add_button.pack(pady=(0, 10))
+        # Body: Sidebar + Content Area
+        body = ctk.CTkFrame(self)
+        body.pack(fill="both", expand=True)
 
-        self.rename_button = ctk.CTkButton(self, text="Renombrar Campos", command=self.rename_all)
-        self.rename_button.pack(pady=(0, 20))
+        self.sidebar = ctk.CTkFrame(body, width=200)
+        self.sidebar.pack(side="left", fill="y", padx=(10, 5), pady=10)
 
-        self.result_text = ctk.CTkTextbox(self, height=100)
-        self.result_text.pack(padx=10, pady=10)
+        self.content = ctk.CTkFrame(body)
+        self.content.pack(side="left", fill="both", expand=True, padx=(5, 10), pady=10)
 
-    def add_row(self):
-        row = len(self.entries) + 1
-        old_field = ctk.CTkEntry(self.frame, width=300, placeholder_text="Nombre actual")
-        new_field = ctk.CTkEntry(self.frame, width=300, placeholder_text="Nuevo nombre")
-        old_field.grid(row=row, column=0, padx=10, pady=5)
-        new_field.grid(row=row, column=1, padx=10, pady=5)
-        self.entries.append((old_field, new_field))
+        # Botón de módulo Renamer
+        renamer_btn = ctk.CTkButton(self.sidebar, text="Renamer", command=self.show_renamer)
+        renamer_btn.pack(pady=10, fill="x")
 
-    def rename_all(self):
-        self.result_text.delete("0.0", "end")
+        self.module_frame = None
+        self.show_renamer()
 
-        fields = {}
-        for old_entry, new_entry in self.entries:
-            old_name = old_entry.get().strip()
-            new_name = new_entry.get().strip()
-            if old_name and new_name:
-                fields[old_name] = new_name
-
-        if not fields:
-            self.result_text.insert("end", "⚠️ No hay campos válidos para renombrar.\n")
-            return
-
-        results = rename_fields(fields)
-
-        for current, (status, result) in results.items():
-            self.result_text.insert("end", f"{status} {current} → {result}\n")
-
+    def show_renamer(self):
+        if self.module_frame:
+            self.module_frame.destroy()
+        self.module_frame = RenamerFrame(self.content)
+        self.module_frame.pack(fill="both", expand=True)
